@@ -1,6 +1,25 @@
 @BanSach_HostAddress = http://localhost:5266
 
-GET {{BanSach_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{BanSach_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+	"username": "demo",
+	"email": "demo@example.com",
+	"password": "123456"
+}
 
 ###
+
+POST {{BanSach_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"usernameOrEmail": "demo",
+	"password": "123456"
+}
+
+###
+
+GET {{BanSach_HostAddress}}/api/book
+Accept: application/json
